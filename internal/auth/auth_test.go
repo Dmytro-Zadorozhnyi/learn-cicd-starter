@@ -17,7 +17,7 @@ func TestGetAPIKey(t *testing.T) {
 		"simple":           {input: http.Header{"Authorization": []string{"ApiKey 123"}}, want: "123", err: nil},
 		"missing header":   {input: http.Header{}, want: "", err: ErrNoAuthHeaderIncluded},
 		"no ApiKey":        {input: http.Header{"Authorization": []string{"123"}}, want: "", err: errors.New("malformed authorization header")},
-		"multiple headers": {input: http.Header{"Authorization": []string{"ApiKey 456", "789"}}, want: "46", err: nil},
+		"multiple headers": {input: http.Header{"Authorization": []string{"ApiKey 456", "789"}}, want: "456", err: nil},
 	}
 
 	for name, tc := range tests {
