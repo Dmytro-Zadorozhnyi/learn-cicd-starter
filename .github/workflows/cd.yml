@@ -29,5 +29,5 @@ jobs:
       - name: Setup GCP SDK
         uses: 'google-github-actions/setup-gcloud@v2'
 
-      - name: 'Use gcloud CLI'
-        run: 'gcloud info'
+      - name: 'Push to GCPs Atrifact Registry'
+        run: (gcloud builds submit --tag us-central1-docker.pkg.dev/notely-454711/notely-ar-repo/notely:latest)
